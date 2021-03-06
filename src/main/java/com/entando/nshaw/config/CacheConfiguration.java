@@ -38,6 +38,7 @@ public class CacheConfiguration {
         return cm -> {
             createCache(cm, "oAuth2Authentication");
             createCache(cm, com.entando.nshaw.domain.Conference.class.getName());
+            createCache(cm, com.entando.nshaw.domain.Track.class.getName());
             // jhipster-needle-caffeine-add-entry
         };
     }

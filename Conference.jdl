@@ -2,3 +2,7 @@ entity Conference {
   location String
   notes String
 }
+
+entity Track {
+  name String
+}

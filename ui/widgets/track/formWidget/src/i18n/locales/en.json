@@ -1,0 +1,33 @@
+{
+  "error": {
+    "dataLoading": "Error during server connection"
+  },
+  "common": {
+    "save": "Save",
+    "dataSaved": "Track successfully saved",
+    "dataDeleted": "Track successfully deleted",
+    "notAuthenticated": "User is not authenticated.",
+    "selectFile": "Upload new file",
+    "selectImageFile": "Upload new image",
+    "download": "Download",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "validation": {
+    "required": "{{field}} is required"
+  },
+  "entities": {
+    "track": {
+      "deleteDialog": {
+        "title": "Delete track",
+        "description": "Are you sure?"
+      },
+      "notFound": "Track not found",
+      "deleted": "Track deleted",
+      "id": "ID",
+      "name": "entities.track.name"
+    }
+  }
+}
