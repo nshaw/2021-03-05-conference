@@ -31,6 +31,9 @@ const ConferenceTable = ({ items, onSelect, classes, t, Actions }) => {
       <TableCell>
         <span>{item.location}</span>
       </TableCell>
+      <TableCell>
+        <span>{item.notes}</span>
+      </TableCell>
       {Actions && (
         <TableCell>
           <Actions item={item} />
@@ -45,6 +48,9 @@ const ConferenceTable = ({ items, onSelect, classes, t, Actions }) => {
         <TableRow>
           <TableCell>
             <span>{t('entities.conference.location')}</span>
+          </TableCell>
+          <TableCell>
+            <span>{t('entities.conference.notes')}</span>
           </TableCell>
           {Actions && <TableCell />}
         </TableRow>

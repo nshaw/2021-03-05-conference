@@ -9,7 +9,7 @@ const DATE_NUMBER_FILTER_TYPES = [
   { value: 'lessOrEqualThan', title: '<=' },
 ];
 
-const STRING_FIELDS = ['location'];
+const STRING_FIELDS = ['location', 'notes'];
 const DATE_FIELDS = [];
 const NUMBER_FIELDS = [];
 

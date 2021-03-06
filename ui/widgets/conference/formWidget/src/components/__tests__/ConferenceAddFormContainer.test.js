@@ -61,6 +61,8 @@ describe('ConferenceAddFormContainer', () => {
 
     const locationField = await findByLabelText('entities.conference.location');
     fireEvent.change(locationField, { target: { value: conferenceMock.location } });
+    const notesField = await findByLabelText('entities.conference.notes');
+    fireEvent.change(notesField, { target: { value: conferenceMock.notes } });
     rerender(<ConferenceAddFormContainer onError={onErrorMock} onUpdate={onCreateMock} />);
 
     const saveButton = await findByTestId('submit-btn');
@@ -87,6 +89,8 @@ describe('ConferenceAddFormContainer', () => {
 
     const locationField = await findByLabelText('entities.conference.location');
     fireEvent.change(locationField, { target: { value: conferenceMock.location } });
+    const notesField = await findByLabelText('entities.conference.notes');
+    fireEvent.change(notesField, { target: { value: conferenceMock.notes } });
     rerender(<ConferenceAddFormContainer onError={onErrorMock} onUpdate={onCreateMock} />);
 
     const saveButton = await findByTestId('submit-btn');

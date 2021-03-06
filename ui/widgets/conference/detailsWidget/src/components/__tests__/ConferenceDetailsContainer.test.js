@@ -48,6 +48,7 @@ describe('ConferenceDetailsContainer component', () => {
     await wait(() => {
       expect(apiConferenceGet).toHaveBeenCalledTimes(1);
       expect(getByText('entities.conference.location')).toBeInTheDocument();
+      expect(getByText('entities.conference.notes')).toBeInTheDocument();
     });
   });
 

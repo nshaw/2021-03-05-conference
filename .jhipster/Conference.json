@@ -6,6 +6,10 @@
     {
       "fieldName": "location",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "notes",
+      "fieldType": "String"
     }
   ],
   "changelogDate": "20210306032158",
@@ -17,5 +21,8 @@
   "readOnly": false,
   "jpaMetamodelFiltering": false,
   "pagination": "no",
-  "microserviceName": "jhipster"
+  "microserviceName": "jhipster",
+  "name": "Conference",
+  "embedded": false,
+  "applications": "*"
 }

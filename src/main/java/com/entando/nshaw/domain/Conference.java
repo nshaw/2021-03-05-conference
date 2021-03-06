@@ -25,6 +25,9 @@ public class Conference implements Serializable {
     @Column(name = "location")
     private String location;
 
+    @Column(name = "notes")
+    private String notes;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
         return id;
@@ -45,6 +48,19 @@ public class Conference implements Serializable {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public Conference notes(String notes) {
+        this.notes = notes;
+        return this;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
@@ -70,6 +86,7 @@ public class Conference implements Serializable {
         return "Conference{" +
             "id=" + getId() +
             ", location='" + getLocation() + "'" +
+            ", notes='" + getNotes() + "'" +
             "}";
     }
 }

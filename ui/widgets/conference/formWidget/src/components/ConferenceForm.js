@@ -75,6 +75,19 @@ class ConferenceForm extends PureComponent {
               label={t('entities.conference.location')}
             />
           </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              id="conference-notes"
+              error={errors.notes && touched.notes}
+              helperText={getHelperText('notes')}
+              className={classes.textField}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.notes}
+              name="notes"
+              label={t('entities.conference.notes')}
+            />
+          </Grid>
           {onDelete && (
             <ConfirmationDialogTrigger
               onCloseDialog={this.handleConfirmationDialogAction}
@@ -137,10 +150,12 @@ ConferenceForm.defaultProps = {
 
 const emptyConference = {
   location: '',
+  notes: '',
 };
 
 const validationSchema = Yup.object().shape({
   location: Yup.string(),
+  notes: Yup.string(),
 });
 
 const formikBag = {

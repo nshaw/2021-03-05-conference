@@ -34,6 +34,14 @@ const ConferenceFieldTable = ({ t, conference }) => (
           <span>{conference.location}</span>
         </TableCell>
       </TableRow>
+      <TableRow>
+        <TableCell>
+          <span>{t('entities.conference.notes')}</span>
+        </TableCell>
+        <TableCell>
+          <span>{conference.notes}</span>
+        </TableCell>
+      </TableRow>
     </TableBody>
   </Table>
 );

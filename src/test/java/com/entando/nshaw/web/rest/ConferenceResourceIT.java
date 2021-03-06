@@ -34,6 +34,9 @@ public class ConferenceResourceIT {
     private static final String DEFAULT_LOCATION = "AAAAAAAAAA";
     private static final String UPDATED_LOCATION = "BBBBBBBBBB";
 
+    private static final String DEFAULT_NOTES = "AAAAAAAAAA";
+    private static final String UPDATED_NOTES = "BBBBBBBBBB";
+
     @Autowired
     private ConferenceRepository conferenceRepository;
 
@@ -53,7 +56,8 @@ public class ConferenceResourceIT {
      */
     public static Conference createEntity(EntityManager em) {
         Conference conference = new Conference()
-            .location(DEFAULT_LOCATION);
+            .location(DEFAULT_LOCATION)
+            .notes(DEFAULT_NOTES);
         return conference;
     }
     /**
@@ -64,7 +68,8 @@ public class ConferenceResourceIT {
      */
     public static Conference createUpdatedEntity(EntityManager em) {
         Conference conference = new Conference()
-            .location(UPDATED_LOCATION);
+            .location(UPDATED_LOCATION)
+            .notes(UPDATED_NOTES);
         return conference;
     }
 
@@ -88,6 +93,7 @@ public class ConferenceResourceIT {
         assertThat(conferenceList).hasSize(databaseSizeBeforeCreate + 1);
         Conference testConference = conferenceList.get(conferenceList.size() - 1);
         assertThat(testConference.getLocation()).isEqualTo(DEFAULT_LOCATION);
+        assertThat(testConference.getNotes()).isEqualTo(DEFAULT_NOTES);
     }
 
     @Test
@@ -121,7 +127,8 @@ public class ConferenceResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(conference.getId().intValue())))
-            .andExpect(jsonPath("$.[*].location").value(hasItem(DEFAULT_LOCATION)));
+            .andExpect(jsonPath("$.[*].location").value(hasItem(DEFAULT_LOCATION)))
+            .andExpect(jsonPath("$.[*].notes").value(hasItem(DEFAULT_NOTES)));
     }
     
     @Test
@@ -135,7 +142,8 @@ public class ConferenceResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(conference.getId().intValue()))
-            .andExpect(jsonPath("$.location").value(DEFAULT_LOCATION));
+            .andExpect(jsonPath("$.location").value(DEFAULT_LOCATION))
+            .andExpect(jsonPath("$.notes").value(DEFAULT_NOTES));
     }
     @Test
     @Transactional
@@ -158,7 +166,8 @@ public class ConferenceResourceIT {
         // Disconnect from session so that the updates on updatedConference are not directly saved in db
         em.detach(updatedConference);
         updatedConference
-            .location(UPDATED_LOCATION);
+            .location(UPDATED_LOCATION)
+            .notes(UPDATED_NOTES);
 
         restConferenceMockMvc.perform(put("/api/conferences").with(csrf())
             .contentType(MediaType.APPLICATION_JSON)
@@ -170,6 +179,7 @@ public class ConferenceResourceIT {
         assertThat(conferenceList).hasSize(databaseSizeBeforeUpdate);
         Conference testConference = conferenceList.get(conferenceList.size() - 1);
         assertThat(testConference.getLocation()).isEqualTo(UPDATED_LOCATION);
+        assertThat(testConference.getNotes()).isEqualTo(UPDATED_NOTES);
     }
 
     @Test

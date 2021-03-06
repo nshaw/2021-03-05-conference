@@ -27,7 +27,8 @@
       "notFound": "Conference non trovato/a",
       "deleted": "Conference eliminato/a",
       "id": "ID",
-      "location": "entità.conference.location"
+      "location": "entità.conference.location",
+      "notes": "entità.conference.notes"
     }
   }
 }

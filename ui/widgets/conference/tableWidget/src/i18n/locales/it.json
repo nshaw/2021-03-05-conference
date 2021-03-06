@@ -42,7 +42,8 @@
       },
       "noItems": "Nessun conferences disponibile",
       "id": "ID",
-      "location": "entità.conference.location"
+      "location": "entità.conference.location",
+      "notes": "entità.conference.notes"
     }
   }
 }

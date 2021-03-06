@@ -49,6 +49,7 @@ const Filter = ({ filter, t, update, remove, filterId, classes }) => {
           >
             <option value="" />
             <option value="location">{t('entities.conference.location')}</option>
+            <option value="notes">{t('entities.conference.notes')}</option>
           </Select>
         </FormControl>
       </Grid>
