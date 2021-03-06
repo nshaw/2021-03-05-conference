@@ -1,0 +1,43 @@
+application {
+  config {
+    applicationType microservice
+    authenticationType oauth2
+    baseName jhipster
+    blueprints [generator-jhipster-entando]
+    buildTool maven
+    cacheProvider caffeine
+    clientPackageManager npm
+    creationTimestamp 1615000431378
+    databaseType sql
+    devDatabaseType h2Disk
+    dtoSuffix DTO
+    embeddableLaunchScript false
+    enableHibernateCache true
+    enableSwaggerCodegen false
+    enableTranslation true
+    jhiPrefix jhi
+    jhipsterVersion "6.9.0"
+    jwtSecretKey "NGE5YjRkYzFiNjEyZDJjOWM5MTU2MzdhZWVmNzQwZjdkNmM4NTRkMGNlNDQ0NjkwYjgwZjQ5OGQzNzUwNDBlYjQwMjhiZjc4Y2Y2OGM5NzYwZDJkMzRhZWI1MDA0ZmIwZjBlMTViYTRmM2YzNWU3YWVhMmU2ZTkzZjAxZjUwOGU="
+    languages [en]
+    messageBroker false
+    nativeLanguage en
+    otherModules [[object Object]]
+    packageName com.entando.nshaw
+    prodDatabaseType postgresql
+    searchEngine false
+    serverPort 8081
+    serviceDiscoveryType eureka
+    skipClient true
+    skipUserManagement true
+    testFrameworks []
+    websocket false
+  }
+
+  entities Conference
+}
+
+entity Conference {
+  location String
+}
+microservice Conference with jhipster
+clientRootFolder Conference with jhipster
