@@ -1,0 +1,21 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "jhipster",
+  "relationships": [],
+  "fields": [
+    {
+      "fieldName": "location",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20210306032158",
+  "dto": "no",
+  "searchEngine": false,
+  "service": "no",
+  "entityTableName": "conference",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "no",
+  "microserviceName": "jhipster"
+}
